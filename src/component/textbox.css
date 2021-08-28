@@ -1,0 +1,44 @@
+.input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input:focus,
+button:focus{
+    outline: none;
+}
+
+.time__input{
+    width: 330px;
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 0.25em 0.1em;
+    font-size: 5em;
+    margin-bottom: 0.5em;
+    background-color: transparent;
+}
+.time__input::placeholder{
+    color: #bcbcbca1;
+}
+
+.start__button{
+    border: none;
+    background-color: #aaaaaa70;
+    color: #ffffff;
+    padding: 0.75em 1em;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+.start__button:hover{
+    background-color: #d6d6d670;
+    cursor: pointer;
+}
+.start__button svg{
+    height: 20px;
+    margin-left: 0.5em;
+}

@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 
+import Textbox from './component/Textbox';
+
 function App() {
 
     const [isSetTime, setIsSetTime] = useState(false);
     const [stateTrue, setStateTrue] = useState(false);
 
+    let goToTimeHandler = () => setIsSetTime(true);
+
     return (
-        <React.Fragment>
+        <div className="app-container">
             {
                 !isSetTime ?
-                    <div>
-                        <input type="text" />
-                        <button onClick={(e) => setIsSetTime(true)}>set time!</button>
-                    </div>
+                    <Textbox clickHandler={goToTimeHandler} />
                 :
                 <div>
                     <h1>hello world :)</h1>
@@ -21,7 +22,7 @@ function App() {
                     </button>
                 </div>
             }
-        </React.Fragment>
+        </div>
     )
 }
 
