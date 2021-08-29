@@ -1,22 +1,22 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { TimerContext } from '../context/TimeContext';
+
+import './timer.css'
+
 
 function Timer() {
 
-    const [stateTrue, setStateTrue] = useState(false);
+    const { time } = useContext(TimerContext);
 
     return (
         <div className="timer-container">
             <div className="timer">
-                <p className="hour"></p>
+                <p className="hour">{time.hours}</p>
                 <p>:</p>
-                <p className="minute"></p>
+                <p className="minute">{time.minute}</p>
                 <p>:</p>
-                <p className="second"></p>
-                <p>:</p>
+                <p className="second">{time.second}</p>
             </div>
-            <button onClick={() => setStateTrue(!stateTrue)}>
-                {stateTrue.toString()}
-            </button>
         </div>
     )
 }

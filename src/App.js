@@ -3,21 +3,35 @@ import React, { useState } from 'react'
 import Textbox from './component/Textbox';
 import Timer from './component/Timer';
 
+import { TimerContext } from './context/TimeContext';
+
+
 function App() {
 
-    const [isSetTime, setIsSetTime] = useState(false);
+    const [ time, setTime ] = useState({
+        second: 0,
+        minute: 0,
+        hours: 0
+    });
 
-    let goToTimeHandler = () => setIsSetTime(true);
+    const [ isSetTimer, setIsSetTimer ] = useState(false);
 
     return (
-        <div className="app-container">
-            {
-                !isSetTime ?
-                    <Textbox clickHandler={goToTimeHandler} />
-                :
-                <Timer />
-            }
-        </div>
+        <TimerContext.Provider value={{
+            time,
+            isSetTimer,
+            setTime,
+            setIsSetTimer
+        }}>
+            <div className="app-container">
+                {
+                    isSetTimer === false ?
+                        <Textbox />
+                    :
+                    <Timer />
+                }
+            </div>
+        </TimerContext.Provider>
     )
 }
 
