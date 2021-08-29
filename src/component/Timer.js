@@ -8,8 +8,11 @@ function Timer() {
         <div className="timer-container">
             <div className="timer">
                 <p className="hour"></p>
-                <span>:</span>
-                
+                <p>:</p>
+                <p className="minute"></p>
+                <p>:</p>
+                <p className="second"></p>
+                <p>:</p>
             </div>
             <button onClick={() => setStateTrue(!stateTrue)}>
                 {stateTrue.toString()}

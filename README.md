@@ -3,13 +3,10 @@
 
 ### For use:
 - First clone this repo
-`git clone `
+`git clone https://github.com/nafasebra/timer`
 - next, Install npm if not have it
 - type this command in your CMD or terminal
 `npm install`
-
-<br />
-
 - done !
 
 #### For run project
