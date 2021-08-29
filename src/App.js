@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
 import Textbox from './component/Textbox';
+import Timer from './component/Timer';
 
 function App() {
 
     const [isSetTime, setIsSetTime] = useState(false);
-    const [stateTrue, setStateTrue] = useState(false);
 
     let goToTimeHandler = () => setIsSetTime(true);
 
@@ -15,12 +15,7 @@ function App() {
                 !isSetTime ?
                     <Textbox clickHandler={goToTimeHandler} />
                 :
-                <div>
-                    <h1>hello world :)</h1>
-                    <button onClick={() => setStateTrue(!stateTrue)}>
-                        {stateTrue.toString()}
-                    </button>
-                </div>
+                <Timer />
             }
         </div>
     )
