@@ -1,13 +1,13 @@
 ## Timer
-#### Timer project created by React.js ( I not use CRA to this repo :) )
+#### Timer project created by React.js ( I don't use CRA to this repo :) )
 
 ### For use:
 - First clone this repo
 `git clone https://github.com/nafasebra/timer`
 - next, Install npm if not have it
-- type this command in your CMD or terminal
+- type this command in your CMD or terminal for install dependencies
 `npm install`
-- done !
+- enjoy!
 
 #### For run project
 `npm run dev`

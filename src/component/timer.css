@@ -7,3 +7,13 @@
 .timer p{
     padding: 0 0.2em;
 }
+
+.play__button{
+    background-color: transparent;
+    border: none;
+}
+.play__button svg{
+    width: 30px;
+    color: #ffffff !important;
+
+}
