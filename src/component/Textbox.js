@@ -7,18 +7,45 @@ import { TimerContext } from '../context/TimeContext';
 
 function Textbox() {
 
-    const { setIsSetTimer } = useContext(TimerContext);
+    let setHours = 1, setMinute = 0, setSecond = 0;
+    const { setIsSetTimer, setTime } = useContext(TimerContext);
 
-    const clickHandler = () => setIsSetTimer(true);
+    const clickHandler = () => {
+        setTime({
+            second: setSecond,
+            minute: setMinute,
+            hours: setHours
+        });
+        setIsSetTimer(true);
+    }
 
     return (
         <div className="input-container">
-            <input 
-                type="text" 
-                className="time__input"
-                maxLength="8"
-                placeholder="00:00:00"
-            />
+            <div className="time__input">
+                <input 
+                    type="text" 
+                    className="hour__input"
+                    maxLength="2"
+                    placeholder="00"
+                    onChange={(e) => setHours = e.target.value}
+                />
+                <p>:</p>
+                <input 
+                    type="text" 
+                    className="minute__input"
+                    maxLength="2"
+                    placeholder="00"
+                    onChange={(e) => setMinute = e.target.value}
+                />
+                <p>:</p>
+                <input 
+                    type="text" 
+                    className="second__input"
+                    maxLength="2"
+                    placeholder="00"
+                    onChange={(e) => setSecond = e.target.value}
+                />
+            </div>
             <button 
                 className="start__button"
                 onClick={() => clickHandler()}

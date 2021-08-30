@@ -11,17 +11,30 @@ button:focus{
 }
 
 .time__input{
-    width: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.time__input p{
+    font-size: 5em;
+    margin: 0;
+    margin-top: -0.75em;
+}
+.hour__input,
+.minute__input,
+.second__input{
+    width: 120px;
+    text-align: center;
     border: none;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
     color: #ffffff;
     padding: 0.25em 0.1em;
-    font-size: 5em;
-    margin-bottom: 0.5em;
+    font-size: 4em;
+    margin: 0 0.2em 0.5em;
     background-color: transparent;
 }
 .time__input::placeholder{
-    color: #bcbcbca1;
+    color: #ffffff !important;
 }
 
 .start__button{
