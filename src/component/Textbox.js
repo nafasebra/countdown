@@ -7,16 +7,20 @@ import { TimerContext } from '../context/TimeContext';
 
 function Textbox() {
 
-    let setHours = 1, setMinute = 0, setSecond = 0;
+    let setHours = 0, setMinute = 0, setSecond = 0;
     const { setIsSetTimer, setTime } = useContext(TimerContext);
 
     const clickHandler = () => {
-        setTime({
-            second: setSecond,
-            minute: setMinute,
-            hours: setHours
-        });
-        setIsSetTimer(true);
+        if(setHours !== 0 && setMinute !== 0 && setSecond !== 0){
+            setTime({
+                second: setSecond,
+                minute: setMinute,
+                hours: setHours
+            });
+            setIsSetTimer(true);
+        } else {
+            alert('please fill the field time');
+        }
     }
 
     return (

@@ -2,10 +2,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3em;
 }
 .timer p{
     padding: 0 0.2em;
+    font-size: 5em;
+}
+
+.time-control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .play__button{
