@@ -33,8 +33,10 @@ button:focus{
     margin: 0 0.2em 0.5em;
     background-color: transparent;
 }
-.time__input::placeholder{
-    color: #ffffff !important;
+.hour__input::placeholder,
+.minute__input::placeholder,
+.second__input::placeholder{
+    color: #ffffff87;
 }
 
 .start__button{
