@@ -23,6 +23,7 @@ function App() {
             setTime,
             setIsSetTimer
         }}>
+            <h1 className="app-name">Timero</h1>
             <div className="app-container">
                 {
                     isSetTimer === false ?
