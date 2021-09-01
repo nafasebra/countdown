@@ -14,12 +14,16 @@
     align-items: center;
 }
 
-.play__button{
+.play__button,
+.resume__button{
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    margin: 0 1em;
 }
-.play__button svg{
-    width: 30px;
+.play__button svg,
+.resume__button svg{
+    width: 40px;
     color: #ffffff !important;
 
 }
