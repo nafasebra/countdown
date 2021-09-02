@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { TimerContext } from '../context/TimeContext';
 
 import './timer.css'
@@ -7,33 +7,54 @@ import './timer.css'
 function Timer() {
 
     const [playStatus, setPlayStatus] = useState(true);
+
     const { time, setTime } = useContext(TimerContext);
 
-    const timeOut = () => {
-        if(time.second > 0){
-            setTime({
-                ...time,
-                second: time.second - 1
-            })
-        } else if(time.second === 0 && time.minute > 0) {
-            setTime({
-                ...time,
-                minute: time.minute - 1,
-                second: 59
-            })
-        } else if(time.second === 0 && time.minute === 0 && time.hours > 0){
-            setTime({
-                hours: time.hours - 1,
-                minute: 59,
-                second: 59
-            })
-        } else {
-            alert('Time out!');
-        }
-    }
- 
+
     
-    playStatus ? setTimeout(timeOut, 1000) : clearTimeout(timeOut);
+    
+    // console.log(playStatus);
+
+    // playStatus ? setTimeout(timeOut, 1000) : clearTimeout(timeOut);
+
+
+    // const playHandler = () => {
+    //     setPlayStatus(!playStatus)
+    // }
+
+    useEffect(() => {
+        let timeOut = null;
+
+        if(playStatus){
+            timeOut = setTimeout(() => {
+                if(time.second > 0){
+                    setTime({
+                        ...time,
+                        second: time.second - 1
+                    })
+                } 
+                else if(time.second === 0 && time.minute > 0) {
+                    setTime({
+                        ...time,
+                        minute: time.minute - 1,
+                        second: 59
+                    })
+                } else if(time.second === 0 && time.minute === 0 && time.hours > 0){
+                    setTime({
+                        hours: time.hours - 1,
+                        minute: 59,
+                        second: 59
+                    })
+                } else {
+                    alert('Time out!');
+                }
+            }, 1000)
+        } else {
+            clearTimeout(timeOut);
+        }
+
+        return () => clearTimeout(timeOut)
+    })
 
 
     return (
@@ -55,7 +76,7 @@ function Timer() {
             <div className="time-control">
                 <button 
                     className="play__button"
-                    onClick={() => setPlayStatus(!playStatus ? true : false)}    
+                    onClick={() => setPlayStatus(!playStatus)}    
                 >
                     {
                         playStatus ?
