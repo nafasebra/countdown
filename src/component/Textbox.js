@@ -16,6 +16,12 @@ function Textbox() {
         }
     }
 
+    const onChangeHandler = (e, unit) => {
+        let regexNumber = /[0-9\b]/;
+        if(e.target.value.match(regexNumber))
+            setTime({...time, [unit]: e.target.value})
+    }
+
     return (
         <div className="input-container">
             <div className="time__input">
@@ -25,7 +31,7 @@ function Textbox() {
                     maxLength="2"
                     placeholder="00"
                     value={time.hours}
-                    onChange={(e) => setTime({...time, hours: e.target.value})}
+                    onChange={(e) => onChangeHandler(e, "hours")}
                 />
                 <p>:</p>
                 <input 
@@ -34,7 +40,7 @@ function Textbox() {
                     maxLength="2"
                     placeholder="00"
                     value={time.minute}
-                    onChange={(e) => setTime({...time, minute: e.target.value})}
+                    onChange={(e) => onChangeHandler(e, "minute")}
                 />
                 <p>:</p>
                 <input 
@@ -43,7 +49,7 @@ function Textbox() {
                     maxLength="2"
                     placeholder="00"
                     value={time.second}
-                    onChange={(e) => setTime({...time, second: e.target.value})}
+                    onChange={(e) => onChangeHandler(e, "second")}
                 />
             </div>
             <button 
