@@ -4,19 +4,12 @@ import './textbox.css';
 
 import { TimerContext } from '../context/TimeContext';
 
-
 function Textbox() {
-
-    let setHours = 0, setMinute = 0, setSecond = 0;
-    const { setIsSetTimer, setTime } = useContext(TimerContext);
+    
+    const { setIsSetTimer, setTime, time } = useContext(TimerContext);
 
     const clickHandler = () => {
-        if(setHours !== 0 && setMinute !== 0 && setSecond !== 0){
-            setTime({
-                second: setSecond,
-                minute: setMinute,
-                hours: setHours
-            });
+        if(time.hours !== 0 && time.minute !== 0 && time.second !== 0){
             setIsSetTimer(true);
         } else {
             alert('please fill the field time');
@@ -31,7 +24,8 @@ function Textbox() {
                     className="hour__input"
                     maxLength="2"
                     placeholder="00"
-                    onChange={(e) => setHours = e.target.value}
+                    value={time.hours}
+                    onChange={(e) => setTime({...time, hours: e.target.value})}
                 />
                 <p>:</p>
                 <input 
@@ -39,7 +33,8 @@ function Textbox() {
                     className="minute__input"
                     maxLength="2"
                     placeholder="00"
-                    onChange={(e) => setMinute = e.target.value}
+                    value={time.minute}
+                    onChange={(e) => setTime({...time, minute: e.target.value})}
                 />
                 <p>:</p>
                 <input 
@@ -47,7 +42,8 @@ function Textbox() {
                     className="second__input"
                     maxLength="2"
                     placeholder="00"
-                    onChange={(e) => setSecond = e.target.value}
+                    value={time.second}
+                    onChange={(e) => setTime({...time, second: e.target.value})}
                 />
             </div>
             <button 

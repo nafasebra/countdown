@@ -10,18 +10,6 @@ function Timer() {
 
     const { time, setTime, setIsSetTimer } = useContext(TimerContext);
 
-
-    
-    
-    // console.log(playStatus);
-
-    // playStatus ? setTimeout(timeOut, 1000) : clearTimeout(timeOut);
-
-
-    // const playHandler = () => {
-    //     setPlayStatus(!playStatus)
-    // }
-
     useEffect(() => {
         let timeOut = null;
 
