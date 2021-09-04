@@ -9,9 +9,9 @@ import { TimerContext } from './context/TimeContext';
 function App() {
 
     const [ time, setTime ] = useState({
-        second: 0,
-        minute: 0,
-        hours: 0
+        second: '',
+        minute: '',
+        hours: ''
     });
 
     const [ isSetTimer, setIsSetTimer ] = useState(false);

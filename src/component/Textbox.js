@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import './textbox.css';
 
 import { TimerContext } from '../context/TimeContext';
 
 function Textbox() {
-    
+
     const { setIsSetTimer, setTime, time } = useContext(TimerContext);
 
     const clickHandler = () => {
