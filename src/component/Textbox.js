@@ -17,9 +17,12 @@ function Textbox() {
     }
 
     const onChangeHandler = (e, unit) => {
-        let regexNumber = /[0-9\b]/;
+        let regexNumber = /^[0-9]*$/;
+        let regBackspace = /[\b]/;
         if(e.target.value.match(regexNumber))
             setTime({...time, [unit]: e.target.value})
+        if(e.target.value.match(regBackspace))
+            console.log('backspace');
     }
 
     return (
